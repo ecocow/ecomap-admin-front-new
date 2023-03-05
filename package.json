@@ -83,6 +83,7 @@
     "simple-datatables": "5.0.2",
     "simplebar": "6.0.0-beta.10",
     "simplebar-vue": "2.0.0-beta.10",
+    "swiper": "^9.1.0",
     "textarea-markdown-editor": "1.0.5-rc.4",
     "tiny-slider": "2.9.4",
     "tippy.js": "6.3.7",
@@ -97,6 +98,7 @@
     "vue-scrollto": "2.20.0",
     "vue-tippy": "6.0.0",
     "vue3-apexcharts": "1.4.1",
+    "vuex": "^4.0.2",
     "zod": "3.20.2"
   },
   "devDependencies": {

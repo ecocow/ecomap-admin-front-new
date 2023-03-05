@@ -3,6 +3,7 @@ import { createApp as createClientApp } from 'vue'
 import { createHead } from '@vueuse/head'
 import { createPinia } from 'pinia'
 import { createRouter } from './router'
+import store from './stores'
 import VueroApp from './VueroApp.vue'
 import './styles'
 
@@ -30,6 +31,7 @@ export async function createApp() {
 
   const pinia = createPinia()
   app.use(pinia)
+  app.use(store)
 
   const vuero = {
     app,

@@ -5,6 +5,8 @@ import { useDarkmode } from '/@src/stores/darkmode'
 import { useUserSession } from '/@src/stores/userSession'
 import { useNotyf } from '/@src/composable/useNotyf'
 import sleep from '/@src/utils/sleep'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 
 const isLoading = ref(false)
 const darkmode = useDarkmode()
@@ -13,13 +15,15 @@ const route = useRoute()
 const notyf = useNotyf()
 const userSession = useUserSession()
 const redirect = route.query.redirect as string
+const iptId = ref<string>('')
+const iptPass = ref<string>('')
 
 const handleLogin = async () => {
   if (!isLoading.value) {
     isLoading.value = true
 
-    await sleep(2000)
-    userSession.setToken('logged-in')
+    // await sleep(2000)
+    // userSession.setToken('logged-in')
 
     notyf.dismissAll()
     notyf.success('Welcome back, Erik Kovalsky')
@@ -35,7 +39,7 @@ const handleLogin = async () => {
 }
 
 useHead({
-  title: 'Auth Login - Vuero',
+  title: '로그인 - 에코맵',
 })
 </script>
 
@@ -47,7 +51,7 @@ useHead({
         <div class="hero-body">
           <div class="columns">
             <div class="column is-10 is-offset-1">
-
+<!--              <img src="../../assets/images/banner/banner01.jpg" alt="" style="height: 50%;">-->
             </div>
           </div>
         </div>
@@ -75,7 +79,7 @@ useHead({
           </label>
           <div class="auth-logo">
             <RouterLink to="/">
-              <AnimatedLogo width="36px" height="36px" />
+              <img src="../../assets/images/logo_ecomap.png" alt="">
             </RouterLink>
           </div>
         </div>
@@ -84,11 +88,8 @@ useHead({
             <div class="columns">
               <div class="column is-12">
                 <div class="auth-content">
-                  <h2>Welcome Back.</h2>
-                  <p>Please sign in to your account</p>
-                  <RouterLink to="/auth/signup-2">
-                    I do not have an account yet
-                  </RouterLink>
+                  <h2>안녕하세요.</h2>
+                  <p>에코맵 사장님 전용 서비스입니다.</p>
                 </div>
                 <div class="auth-form-wrapper">
                   <!-- Login Form -->
@@ -98,8 +99,9 @@ useHead({
                       <VField>
                         <VControl icon="feather:user">
                           <VInput
+                            v-model="iptId"
                             type="text"
-                            placeholder="Username"
+                            placeholder="아이디"
                             autocomplete="username"
                           />
                         </VControl>
@@ -109,15 +111,16 @@ useHead({
                       <VField>
                         <VControl icon="feather:lock">
                           <VInput
+                            v-model="iptPass"
                             type="password"
-                            placeholder="Password"
+                            placeholder="패스워드"
                             autocomplete="current-password"
                           />
                         </VControl>
                       </VField>
 
                       <!-- Switch -->
-                      <VField>
+                      <VField v-if="false">
                         <VControl class="setting-item">
                           <VCheckbox label="Remember me" paddingless />
                         </VControl>
@@ -133,12 +136,14 @@ useHead({
                           fullwidth
                           raised
                         >
-                          Sign In
+                          로그인
                         </VButton>
                       </div>
 
                       <div class="forgot-link has-text-centered">
-                        <a>Forgot Password?</a>
+                        <RouterLink to="/auth/signup-2">
+                          회원가입
+                        </RouterLink>
                       </div>
                     </div>
                   </form>
