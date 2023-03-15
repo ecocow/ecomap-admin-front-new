@@ -4,9 +4,10 @@ import { useHead } from '@vueuse/head'
 import { useDarkmode } from '/@src/stores/darkmode'
 import { useUserSession } from '/@src/stores/userSession'
 import { useNotyf } from '/@src/composable/useNotyf'
+import { getMemberAPI, loginAPI } from '/@src//stores/api'
 import sleep from '/@src/utils/sleep'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/css'
+// import 'swiper/css'
 
 const isLoading = ref(false)
 const darkmode = useDarkmode()
@@ -18,23 +19,37 @@ const redirect = route.query.redirect as string
 const iptId = ref<string>('')
 const iptPass = ref<string>('')
 
-const handleLogin = async () => {
+const login = async () : Promise<void> => {
   if (!isLoading.value) {
     isLoading.value = true
-
-    // await sleep(2000)
-    // userSession.setToken('logged-in')
-
-    notyf.dismissAll()
-    notyf.success('Welcome back, Erik Kovalsky')
-
-    if (redirect) {
-      router.push(redirect)
+    const { data } = <any> await loginAPI({
+      loginId: iptId.value,
+      password: iptPass.value,
+    })
+    console.log(data)
+    if(data.success) {
+      // notyf.dismissAll()
+      // notyf.success('Welcome back, Erik Kovalsky')
+      localStorage.role = data.data.role
+      localStorage.accessToken = data.data.token
+      userSession.setToken(data.data.token)
+      if (redirect) {
+        await router.push(redirect)
+      } else {
+        await router.push('/sidebar/dashboards')
+      }
     } else {
-      router.push('/app')
+      // notyf.error(data.message ?? 'Welcome back, Erik 111Kovalsky')
     }
-
     isLoading.value = false
+  }
+}
+const getMember = async (userId: number) : Promise<void> => {
+  const { data } = <any> await getMemberAPI(userId)
+  if (data.success) {
+
+  } else {
+
   }
 }
 
@@ -93,7 +108,7 @@ useHead({
                 </div>
                 <div class="auth-form-wrapper">
                   <!-- Login Form -->
-                  <form @submit.prevent="handleLogin">
+                  <form @submit.prevent="login">
                     <div class="login-form">
                       <!-- Username -->
                       <VField>
@@ -103,6 +118,7 @@ useHead({
                             type="text"
                             placeholder="아이디"
                             autocomplete="username"
+                            aria-required="true"
                           />
                         </VControl>
                       </VField>
@@ -115,6 +131,7 @@ useHead({
                             type="password"
                             placeholder="패스워드"
                             autocomplete="current-password"
+                            aria-required="true"
                           />
                         </VControl>
                       </VField>
@@ -141,7 +158,7 @@ useHead({
                       </div>
 
                       <div class="forgot-link has-text-centered">
-                        <RouterLink to="/auth/signup-2">
+                        <RouterLink to="/auth/signup">
                           회원가입
                         </RouterLink>
                       </div>

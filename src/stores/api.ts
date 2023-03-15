@@ -16,58 +16,82 @@ export function loginAPI (payload: object) {
     })
 }
 // 로그인
-export function refreshAPI (payload: object) {
+export function getMemberAPI (payload: number) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/token/refresh/`, payload)
+        return axiosInstanceNoAuth().get(`${import.meta.env.VITE_API_PATH}//members/${payload}`)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
-// 토큰 재발행
-export function loginOtpAPI (payload: object) {
+// Signup
+export function signupAPI (payload: object) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/login_otp/`, payload)
+        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/members/signup`, payload)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
-// 로그인 백도어
-export function loginOtpBackAPI (payload: object) {
+// Signup id check
+export function signupIdCheckAPI (payload: string) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/login_otp_backdoor/`, payload)
+        return axiosInstanceNoAuth().get(`${import.meta.env.VITE_API_PATH}/members/check?loginId=${payload}`)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
 
-// 회원가입 인증번호 발송
-export function signupAPI (payload: object) {
+// Shop list
+export function getShopsAPI (payload: number) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/signup/`, payload)
+        return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/shops?page=${payload}`)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
-// 회원가입
-export function signupOtpAPI (payload: object) {
+// Shop detail
+export function getShopDetailAPI (payload: number) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/signup_otp/`, payload)
+        return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/shops/${payload}`)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
-// 회원가입 동의
-export function signupAgreeAPI (payload: object) {
+// Shop put
+export function putShopAPI (id: number, payload: object) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/signup_agree/`, payload)
+        return axiosInstanceFormData().put(`${import.meta.env.VITE_API_PATH}/shops/${id}`, payload)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
 }
-// 로그아웃
-export function logoutAPI () {
+// Hash tag
+export function getHashtagAPI (payload: number) {
     return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().post(`${import.meta.env.VITE_API_PATH}/member/logout/`, {refresh_token: localStorage.refreshToken})
+        return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/tags?page=${payload}`)
+            .then(response => resolve(response))
+            .catch(err => reject(err))
+    })
+}
+// Code
+export function getCodeAPI () {
+    return new Promise((resolve, reject) => {
+        return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/codes`)
+            .then(response => resolve(response))
+            .catch(err => reject(err))
+    })
+}
+// Code
+export function getCodeTypeAPI (payload: string) {
+    return new Promise((resolve, reject) => {
+        return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/codes/type?type=${payload}`)
+            .then(response => resolve(response))
+            .catch(err => reject(err))
+    })
+}
+// Shop hour delete
+export function delShopHourAPI (payload: number) {
+    return new Promise((resolve, reject) => {
+        return axiosInstance().delete(`${import.meta.env.VITE_API_PATH}/shops/hour/${payload}`)
             .then(response => resolve(response))
             .catch(err => reject(err))
     })
@@ -99,13 +123,13 @@ export function getShopListAPI (payload: ShopList) {
             .catch(err => reject(err))
     })
 }
-export function getShopDetailAPI (payload: number) {
-    return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().get(`${import.meta.env.VITE_API_PATH}/shop/${payload}/`)
-            .then(response => resolve(response))
-            .catch(err => reject(err))
-    })
-}
+// export function getShopDetailAPI (payload: number) {
+//     return new Promise((resolve, reject) => {
+//         return axiosInstanceNoAuth().get(`${import.meta.env.VITE_API_PATH}/shop/${payload}/`)
+//             .then(response => resolve(response))
+//             .catch(err => reject(err))
+//     })
+// }
 export function getAuthShopDetailAPI (payload: number) {
     return new Promise((resolve, reject) => {
         return axiosInstance().get(`${import.meta.env.VITE_API_PATH}/shop/${payload}/`)
@@ -113,14 +137,7 @@ export function getAuthShopDetailAPI (payload: number) {
             .catch(err => reject(err))
     })
 }
-// 해쉬태그 리스트
-export function getHashtagAPI (payload: string) {
-    return new Promise((resolve, reject) => {
-        return axiosInstanceNoAuth().get(`${import.meta.env.VITE_API_PATH}/shop/hashtag/?shop_code=${payload}`)
-            .then(response => resolve(response))
-            .catch(err => reject(err))
-    })
-}
+
 // 스팟
 export function getSpotListAPI () {
     return new Promise((resolve, reject) => {
@@ -279,6 +296,7 @@ export function getMyCommentListAPI (page: number) {
 }
 // 카카오 주소검색
 export function searchAddressAPI (page: number, keyword: string) {
+    console.log(keyword)
     return new Promise((resolve, reject) => {
         return axiosInstanceKakao().get(`/v2/local/search/address.json?size=30&page=${page}&query=${keyword}`)
             .then(response => resolve(response))

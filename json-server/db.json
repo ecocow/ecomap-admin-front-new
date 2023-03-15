@@ -5,35 +5,30 @@
       "name": "Henry G.",
       "lastMessage": "3 minutes ago",
       "unreadMessages": true,
-      "avatar": "/demo/avatars/10.jpg"
     },
     {
       "id": 2,
       "name": "Melany W.",
       "lastMessage": "30 minutes ago",
       "unreadMessages": false,
-      "avatar": "/demo/avatars/25.jpg"
     },
     {
       "id": 3,
       "name": "Tara S.",
       "lastMessage": "1 day ago",
       "unreadMessages": false,
-      "avatar": "/demo/avatars/13.jpg"
     },
     {
       "id": 4,
       "name": "Esteban C.",
       "lastMessage": "1 day ago",
       "unreadMessages": false,
-      "avatar": "/demo/avatars/18.jpg"
     },
     {
       "id": 5,
       "name": "Alice C.",
       "lastMessage": "2 days ago",
       "unreadMessages": false,
-      "avatar": "/demo/avatars/7.jpg"
     }
   ],
   "messages": [
@@ -55,7 +50,6 @@
       "messageId": 1,
       "type": "msg",
       "sender": "other",
-      "avatar": "/demo/avatars/10.jpg",
       "content": {
         "text": "Hey Erik, I came accross a new Saas software while doing some research. You should definitely check it out.",
         "time": "08:17pm"
@@ -91,7 +85,6 @@
       "messageId": 4,
       "type": "msg",
       "sender": "other",
-      "avatar": "/demo/avatars/10.jpg",
       "content": {
         "text": "Here you go. There's also a full fledged documentation. Just click on the click in the top right corner.",
         "time": "11:27am"
@@ -103,7 +96,6 @@
       "messageId": 5,
       "type": "imagelink",
       "sender": "other",
-      "avatar": "/demo/avatars/10.jpg",
       "content": {
         "text": "Manage projects like you never did before with this new app",
         "subtext": "gettrueprojects.com",

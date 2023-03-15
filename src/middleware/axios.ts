@@ -20,7 +20,7 @@ export const axiosInstance = () => {
         withCredentials: true,
         headers: {
             'content-type': 'application/json',
-            'Authorization': store.state.accessToken || localStorage.accessToken
+            'Authorization': `Bearer ${localStorage.accessToken}`
         }
     })
     instance.interceptors.response.use(response)
@@ -33,6 +33,7 @@ export const axiosInstanceFormData = function () {
         withCredentials: true,
         headers: {
             'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${localStorage.accessToken}`
         }
     })
     instance.interceptors.response.use(response)

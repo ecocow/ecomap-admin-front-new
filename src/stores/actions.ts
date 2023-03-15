@@ -3,9 +3,7 @@ import { Callback, Dialogs, SearchEvent, State } from './state'
 import * as t from './types'
 import {
     getProfileAPI,
-    logoutAPI
 } from './api'
-import store from "@/store/index";
 import {SHOW_SNACK_BAR} from "./types";
 
 export default {
@@ -27,7 +25,7 @@ export default {
     logout ({commit}: ActionContext<State, State>) {
         return Promise.resolve()
             .then(() => {
-                return logoutAPI()
+                // return logoutAPI()
             })
             .then((response) => {
                 // const { data } = <any> response

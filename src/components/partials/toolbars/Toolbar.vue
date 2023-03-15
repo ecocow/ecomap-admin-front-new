@@ -10,19 +10,19 @@ const panels = usePanels()
 
 const localFlagSrc = computed(() => {
   switch (locale.value) {
+    case 'en':
+      return '/images/icons/flags/united-states-of-america.svg'
     case 'fr':
       return '/images/icons/flags/france.svg'
     case 'es':
       return '/images/icons/flags/spain.svg'
-    case 'es-MX':
-      return '/images/icons/flags/mexico.svg'
     case 'de':
       return '/images/icons/flags/germany.svg'
     case 'zh-CN':
       return '/images/icons/flags/china.svg'
-    case 'en':
+    case 'ko':
     default:
-      return '/images/icons/flags/united-states-of-america.svg'
+      return '/images/icons/flags/korea.svg'
   }
 })
 </script>
@@ -53,7 +53,5 @@ const localFlagSrc = computed(() => {
     >
       <img :src="localFlagSrc" alt="" />
     </a>
-
-    <slot></slot>
   </div>
 </template>

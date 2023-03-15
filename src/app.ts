@@ -3,6 +3,7 @@ import { createApp as createClientApp } from 'vue'
 import { createHead } from '@vueuse/head'
 import { createPinia } from 'pinia'
 import { createRouter } from './router'
+import VueDaumPostcode from 'vue-daum-postcode'
 import store from './stores'
 import VueroApp from './VueroApp.vue'
 import './styles'
@@ -32,6 +33,7 @@ export async function createApp() {
   const pinia = createPinia()
   app.use(pinia)
   app.use(store)
+  app.use(VueDaumPostcode)
 
   const vuero = {
     app,

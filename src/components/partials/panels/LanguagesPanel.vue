@@ -10,7 +10,7 @@ const { locale, t } = useI18n()
  * We use the same storage key as we use in the /src/i18n.ts file
  * so if user reload the page, the selected language will be the same
  */
-const defaultLocale = useStorage('locale', 'en')
+const defaultLocale = useStorage('locale', 'ko')
 
 /**
  * Each time we change the locale, we persit it in the storage
@@ -53,8 +53,25 @@ watch(locale, () => {
                 v-model="locale"
                 type="radio"
                 name="language_selection"
-                value="en"
+                value="ko"
                 checked
+              />
+              <div class="language-option-inner">
+                <img src="/images/icons/flags/korea.svg" alt="" />
+                <div class="indicator">
+                  <i aria-hidden="true" class="iconify" data-icon="feather:check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="language-box">
+            <div class="language-option">
+              <input
+                v-model="locale"
+                type="radio"
+                name="language_selection"
+                value="en"
               />
               <div class="language-option-inner">
                 <img src="/images/icons/flags/united-states-of-america.svg" alt="" />

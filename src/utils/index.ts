@@ -1,6 +1,6 @@
 // import router from '../router'
 import store from '../stores'
-import { refreshAPI } from '../stores/api'
+// import { refreshAPI } from '../stores/api'
 export default {}
 
 export const getUserAgent = () : string => {
@@ -59,7 +59,7 @@ export const goAuthPage = () => {
  }, 100)
 }
 export const gogossing = (data: any) => {
-  if (data) setAuth(data)
+  // if (data) setAuth(data)
   const query = window.location.search
   const params = new URLSearchParams(query)
   const redirect = params.get('redirect')
@@ -84,25 +84,26 @@ export const checkAuth = async () => {
     os_type_code: getOsTypeCode(),
     user_agent: getUserAgent(),
    }
-   const { data } = <any> await refreshAPI(d)
-   console.log('------')
-   console.log(data)
-   if (data.code === 0) {
-    localStorage.accessToken = data.access_token
-    store.dispatch('setAccessToken', data.access_token)
-    store.dispatch('showSnackBar', {
-     active: 'snackbar',
-     msg: '인증토큰이 재발행되어 요청하신 작업을 완료하지 못했습니다. \n다시 시도해주세요.',
-     type: 'susccess'
-    })
-   } else {
-    delAuth()
-    goAuthPage()
-   }
-  } else {
-   delAuth()
-   goAuthPage()
- }
+  }
+   // const { data } = <any> await refreshAPI(d)
+   // console.log('------')
+   // console.log(data)
+   // if (data.code === 0) {
+   //  localStorage.accessToken = data.access_token
+   //  store.dispatch('setAccessToken', data.access_token)
+   //  store.dispatch('showSnackBar', {
+   //   active: 'snackbar',
+   //   msg: '인증토큰이 재발행되어 요청하신 작업을 완료하지 못했습니다. \n다시 시도해주세요.',
+   //   type: 'susccess'
+   //  })
+   // } else {
+   //  delAuth()
+   //  goAuthPage()
+   // }
+  // } else {
+  //  delAuth()
+  //  goAuthPage()
+ // }
 }
 export const setAuth = (data: any) => {
  if (data.refresh_token) {

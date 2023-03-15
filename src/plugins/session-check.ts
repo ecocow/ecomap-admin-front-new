@@ -39,14 +39,14 @@ export default definePlugin(async ({ router, api, pinia }) => {
   }
 
   router.beforeEach((to) => {
-    if (to.meta.requiresAuth && !userSession.isLoggedIn) {
-      // 2. If the page requires auth, check if user is logged in
-      // if not, redirect to login page.
-      return {
-        name: '/auth/login',
-        // save the location we were at to come back later
-        query: { redirect: to.fullPath },
-      }
-    }
+    // if (to.meta.requiresAuth && !userSession.isLoggedIn) {
+    //   // 2. If the page requires auth, check if user is logged in
+    //   // if not, redirect to login page.
+    //   return {
+    //     name: '/auth/login',
+    //     // save the location we were at to come back later
+    //     query: { redirect: to.fullPath },
+    //   }
+    // }
   })
 })
