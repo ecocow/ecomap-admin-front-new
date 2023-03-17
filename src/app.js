@@ -3,9 +3,9 @@ import { createHead } from '@vueuse/head';
 import { createPinia } from 'pinia';
 import { createRouter } from './router';
 import VueDaumPostcode from 'vue-daum-postcode';
-import store from './stores'
-import VueroApp from './VueroApp.vue'
-import './styles'
+import store from './stores';
+import VueroApp from './VueroApp.vue';
+import './styles';
 import { createApi } from '/@src/composable/useApi';
 const plugins = import.meta.glob('./plugins/*.ts', {
     eager: true,

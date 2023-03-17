@@ -7,18 +7,6 @@ Generated using nucleoapp.com
 
 /* purgecss start ignore */
 
-@font-face {
-  font-family: 'LineIconsPro Light';
-  src: url('/fonts/LineIconsProLight.eot');
-  src: url('/fonts/LineIconsProLight.eot') format('embedded-opentype'),
-    url('/fonts/LineIconsProLight.woff2') format('woff2'),
-    url('/fonts/LineIconsProLight.woff') format('woff'),
-    url('/fonts/LineIconsProLight.ttf') format('truetype'),
-    url('/fonts/LineIconsProLight.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
 
 /* ------------------------
     base class definition
