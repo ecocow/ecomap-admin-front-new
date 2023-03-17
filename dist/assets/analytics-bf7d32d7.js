@@ -1,0 +1,1 @@
+import{C as a,N as s,j as t,o as e,d as r,k as i}from"./index-2b32231c.js";import{u as n}from"./viewWrapper-bcc55ab0.js";const o={class:"page-content-inner"},c=a({__name:"analytics",setup:a=>(n().setPageTitle("Analytics Dashboard"),s({title:"Analytics Dashboard - Sidebar - Vuero"}),(a,s)=>{const n=t("AnalyticsDashboard");return e(),r("div",o,[i(n)])})});export{c as default};

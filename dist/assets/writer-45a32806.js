@@ -1,0 +1,1 @@
+import{C as e,N as a,j as r,o as s,d as t,k as i}from"./index-2b32231c.js";import{u as o}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},d=e({__name:"writer",setup:e=>(o().setPageTitle("Writer Dashboard"),a({title:"Writer Dashboard - Sidebar - Vuero"}),(e,a)=>{const o=r("LifestyleDashboardV4");return s(),t("div",n,[i(o)])})});export{d as default};

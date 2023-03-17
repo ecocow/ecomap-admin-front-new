@@ -1,0 +1,1 @@
+import{C as s,N as a,j as e,o as r,d as o,k as t}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},u=s({__name:"course",setup:s=>(i().setPageTitle("Course Dashboard"),a({title:"Course Dashboard - Sidebar - Vuero"}),(s,a)=>{const i=e("CourseDashboard");return r(),o("div",n,[t(i)])})});export{u as default};

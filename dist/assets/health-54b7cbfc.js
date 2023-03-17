@@ -1,0 +1,1 @@
+import{C as a,N as e,j as s,o as t,d as r,k as o}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},d=a({__name:"health",setup:a=>(i().setPageTitle("Health Dashboard"),e({title:"Health Dashboard - Sidebar - Vuero"}),(a,e)=>{const i=s("LifestyleDashboardV3");return t(),r("div",n,[o(i)])})});export{d as default};

@@ -1,0 +1,1 @@
+import{C as a,N as e,j as s,o as t,d as r,k as o}from"./index-2b32231c.js";import{u as p}from"./viewWrapper-bcc55ab0.js";const i={class:"page-content-inner"},n=a({__name:"charts-apex",setup:a=>(p().setPageTitle("Charts Apex"),e({title:"Charts Apex - Sidebar - Vuero"}),(a,e)=>{const p=s("ApexDashboard");return t(),r("div",i,[o(p)])})});export{n as default};

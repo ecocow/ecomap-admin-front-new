@@ -1,0 +1,1 @@
+import{C as e,N as r,j as i,o as t,a}from"./index-2b32231c.js";import{u as s}from"./viewWrapper-bcc55ab0.js";const o=e({__name:"experience",setup:e=>(s().setPageTitle("Profile Edit 2"),r({title:"Profile Edit 2 - Sidebar - Vuero"}),(e,r)=>{const s=i("EditProfileExperience");return t(),a(s)})});export{o as default};
