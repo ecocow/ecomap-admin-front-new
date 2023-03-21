@@ -1,1 +1,0 @@
-import{C as e,N as s,j as a,o as t,d as o,k as i}from"./index-2b32231c.js";import{u as r}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},b=e({__name:"hobbies",setup:e=>(r().setPageTitle("Hobbies"),s({title:"Hobbies - Sidebar - Vuero"}),(e,s)=>{const r=a("LifestyleDashboardV2");return t(),o("div",n,[i(r)])})});export{b as default};

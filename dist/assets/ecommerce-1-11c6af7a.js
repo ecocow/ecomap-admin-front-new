@@ -1,1 +1,0 @@
-import{C as e,N as a,j as r,o as s,d as o,k as t}from"./index-2b32231c.js";import{u as m}from"./viewWrapper-bcc55ab0.js";const c={class:"page-content-inner"},i=e({__name:"ecommerce-1",setup:e=>(m().setPageTitle("Ecommerce 1"),a({title:"Ecommerce 1 - Sidebar - Vuero"}),(e,a)=>{const m=r("EcommerceDashboardV1");return s(),o("div",c,[t(m)])})});export{i as default};

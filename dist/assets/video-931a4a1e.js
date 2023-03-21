@@ -1,1 +1,0 @@
-import{C as e,N as a,j as s,o,d as r,k as t}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const d={class:"page-content-inner"},n=e({__name:"video",setup:e=>(i().setPageTitle("Video Dashboard"),a({title:"Video Dashboard - Sidebar - Vuero"}),(e,a)=>{const i=s("LifestyleDashboardV5");return o(),r("div",d,[t(i)])})});export{n as default};

@@ -1,1 +1,0 @@
-import{C as s,N as a,j as e,o as r,d as o,k as t}from"./index-2b32231c.js";import{u as n}from"./viewWrapper-bcc55ab0.js";const i={class:"page-content-inner"},u=s({__name:"human-ressources",setup:s=>(n().setPageTitle("HR Dashboard"),a({title:"HR Dashboard - Sidebar - Vuero"}),(s,a)=>{const n=e("HumanRessourcesDashboard");return r(),o("div",i,[t(n)])})});export{u as default};

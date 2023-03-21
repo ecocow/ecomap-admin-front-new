@@ -1,1 +1,0 @@
-import{C as a,N as e,j as n,o as s,d as r,k as t}from"./index-2b32231c.js";import{u as o}from"./viewWrapper-bcc55ab0.js";const i={class:"page-content-inner"},p=a({__name:"kanban-board",setup:a=>(o().setPageTitle("Kanban Board"),e({title:"Kanban Board - Sidebar - Vuero"}),(a,e)=>{const o=n("KanbanApp");return s(),r("div",i,[t(o)])})});export{p as default};

@@ -1,1 +1,0 @@
-import{C as e,N as i,j as r,o as s,d as a,k as o}from"./index-2b32231c.js";import{u as t}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},l=e({__name:"profile-view",setup:e=>(t().setPageTitle("Profile View"),i({title:"Profile View - Sidebar - Vuero"}),(e,i)=>{const t=r("ViewProfile");return s(),a("div",n,[o(t)])})});export{l as default};

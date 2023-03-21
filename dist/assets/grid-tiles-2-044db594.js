@@ -1,1 +1,0 @@
-import{C as e,N as s,j as i,o as r,d as a,k as t}from"./index-2b32231c.js";import{u as o}from"./viewWrapper-bcc55ab0.js";const d={class:"page-content-inner"},n=e({__name:"grid-tiles-2",setup:e=>(o().setPageTitle("Grid Tiles 2"),s({title:"Grid Tiles 2 - Sidebar - Vuero"}),(e,s)=>{const o=i("TilesGridV2");return r(),a("div",d,[t(o)])})});export{n as default};

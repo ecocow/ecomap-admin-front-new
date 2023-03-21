@@ -1,1 +1,0 @@
-import{C as s,N as a,j as e,o,d as r,k as t}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},b=s({__name:"jobs",setup:s=>(i().setPageTitle("Jobs"),a({title:"Jobs Dashboard - Sidebar - Vuero"}),(s,a)=>{const i=e("JobsDashboard");return o(),r("div",n,[t(i)])})});export{b as default};

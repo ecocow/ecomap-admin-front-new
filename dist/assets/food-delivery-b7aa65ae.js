@@ -1,1 +1,0 @@
-import{C as e,N as o,j as r,o as s,d as a,k as t}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const p={class:"page-content-inner"},d=e({__name:"food-delivery",setup:e=>(i().setPageTitle("Food Delivery App"),o({title:"Food Delivery App - Sidebar - Vuero"}),(e,o)=>{const i=r("FoodDeliveryApp");return s(),a("div",p,[t(i)])})});export{d as default};

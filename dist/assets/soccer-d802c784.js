@@ -1,1 +1,0 @@
-import{C as e,N as a,j as s,o as r,d as o,k as t}from"./index-2b32231c.js";import{u as c}from"./viewWrapper-bcc55ab0.js";const i={class:"page-content-inner"},n=e({__name:"soccer",setup:e=>(c().setPageTitle("Soccer"),a({title:"Soccer Dashboard - Sidebar - Vuero"}),(e,a)=>{const c=s("SoccerDashboard");return r(),o("div",i,[t(c)])})});export{n as default};

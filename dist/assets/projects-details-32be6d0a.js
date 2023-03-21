@@ -1,1 +1,0 @@
-import{C as e,N as t,j as s,o as r,d as a,k as o}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const c={class:"page-content-inner"},p=e({__name:"projects-details",setup:e=>(i().setPageTitle("Projects project"),t({title:"Projects project - Sidebar - Vuero"}),(e,t)=>{const i=s("ProjectDetailsV1");return r(),a("div",c,[o(i)])})});export{p as default};

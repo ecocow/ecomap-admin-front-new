@@ -1,1 +1,0 @@
-import{C as a,N as s,j as t,o as e,d as o,k as r}from"./index-2b32231c.js";import{u as i}from"./viewWrapper-bcc55ab0.js";const n={class:"page-content-inner"},c=a({__name:"stocks",setup:a=>(i().setPageTitle("Stock Dashboard"),s({title:"Stock Dashboard - Sidebar - Vuero"}),(a,s)=>{const i=t("StockDashboard");return e(),o("div",n,[r(i)])})});export{c as default};
